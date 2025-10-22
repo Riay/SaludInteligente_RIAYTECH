@@ -3,13 +3,7 @@
 ---
 
 🩺 Salud Inteligente - por RIAYTECH Solutions
-Aplicación Android mínima que demuestra un flujo de Login (con credenciales demo), registro en una base de datos SQLite local y un Dashboard de bienvenida.
-
-Credenciales de demostración:
-
-Usuario: admin
-
-Contraseña: admin123
+Aplicación Android con flujo de Login, registro en una base de datos SQLite local y un Dashboard de bienvenida.
 
 ---
 
@@ -67,6 +61,6 @@ Asegúrate de tener el siguiente entorno configurado, especialmente si compilas 
 
 ☕ JDK 11 o superior.
 
-🤖 Android SDK (compilado contra la plataforma 33).
+🤖 Android SDK.
 
 🌎 La variable de entorno ANDROID_HOME debe estar configurada correctamente.
