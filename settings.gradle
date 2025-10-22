@@ -1,0 +1,2 @@
+rootProject.name = 'SaludInteligente_RIAYTECH'
+include ':app'
