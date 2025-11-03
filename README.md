@@ -2,7 +2,7 @@
 
 ---
 
-🩺 Salud Inteligente - por RIAYTECH Solutions
+🩺 Salud Inteligente - por RIAYTECH Solutions F
 Aplicación Android con flujo de Login, registro en una base de datos SQLite local y un Dashboard de bienvenida.
 
 ---
