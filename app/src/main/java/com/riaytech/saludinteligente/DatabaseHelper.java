@@ -38,20 +38,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // Insertar usuario
     public boolean addUser(String name, String email, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COL_NAME, name.trim());
         cv.put(COL_EMAIL, email.trim().toLowerCase());
-        cv.put(COL_PASS, password); // no trim password if you allow spaces (but could trim)
+        cv.put(COL_PASS, password);
         long result = db.insertWithOnConflict(TABLE_USERS, null, cv, SQLiteDatabase.CONFLICT_IGNORE);
         Log.d(TAG, "addUser result=" + result + " email=" + email.trim().toLowerCase());
         db.close();
         return result != -1;
     }
 
-    // Validar usuario (email + password)
     public boolean checkUser(String email, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         String emailNorm = email.trim().toLowerCase();

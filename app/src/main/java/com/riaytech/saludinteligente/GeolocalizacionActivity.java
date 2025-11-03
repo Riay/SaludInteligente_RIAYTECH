@@ -67,7 +67,6 @@ public class GeolocalizacionActivity extends AppCompatActivity implements OnMapR
                                 gMap.addMarker(new MarkerOptions().position(miUbicacion).title("Mi Ubicación"));
                                 gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(miUbicacion, 15f));
                             } else {
-                                // Ubicación es nula (puede pasar la primera vez)
                                 Toast.makeText(this, "No se pudo obtener la ubicación actual", Toast.LENGTH_SHORT).show();
                             }
                         });
@@ -82,7 +81,6 @@ public class GeolocalizacionActivity extends AppCompatActivity implements OnMapR
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == LOCATION_REQUEST_CODE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permiso concedido
                 getDeviceLocation();
             } else {
                 Toast.makeText(this, "Permiso de ubicación denegado", Toast.LENGTH_SHORT).show();

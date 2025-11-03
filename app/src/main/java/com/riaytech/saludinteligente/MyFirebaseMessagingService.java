@@ -39,10 +39,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private void sendNotification(String title, String body) {
 
-        // --- AQUÍ ESTÁ LA CORRECCIÓN ---
-        // Usamos un ícono del sistema de Android (un círculo con una 'i')
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(android.R.drawable.ic_dialog_info) // <-- LÍNEA CORREGIDA
+                .setSmallIcon(android.R.drawable.ic_dialog_info)
                 .setContentTitle(title)
                 .setContentText(body)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)

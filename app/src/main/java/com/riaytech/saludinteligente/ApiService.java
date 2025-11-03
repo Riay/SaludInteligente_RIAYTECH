@@ -7,7 +7,6 @@ import retrofit2.http.GET;
 
 public interface ApiService {
 
-    // Endpoint de prueba
     @GET("posts/1")
     Call<JsonObject> testConnection();
 }

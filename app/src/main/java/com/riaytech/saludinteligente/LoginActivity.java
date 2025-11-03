@@ -37,7 +37,6 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, DashboardActivity.class).putExtra("email", email));
                 finish();
             } else {
-                // depuración adicional: mostrar la contraseña guardada (solo en pruebas)
                 String stored = db.getPasswordForEmail(email);
                 Log.d(TAG, "attemptLogin storedPass=" + stored);
                 Toast.makeText(LoginActivity.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
