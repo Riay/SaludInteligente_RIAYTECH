@@ -1,46 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:background="@color/background"
+    android:padding="24dp"
+    tools:context=".RegisterActivity"> <ImageView
+    android:id="@+id/imgLogoRegister"
+    android:layout_width="160dp"
+    android:layout_height="160dp"
+    android:layout_gravity="center_horizontal"
+    android:src="@mipmap/ic_launcher_round"
+    android:contentDescription="@string/app_name"
+    android:layout_marginTop="40dp"
+    android:layout_marginBottom="24dp" />
 
-    <TextView
-        android:text="Registro de Usuario"
-        android:textSize="22sp"
+    <EditText
+        android:id="@+id/edtUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="8dp" />
+        android:hint="Nombre de Usuario"
+        android:inputType="textPersonName"
+        android:drawableStart="@android:drawable/ic_menu_edit"
+        android:padding="12dp"
+        android:background="@drawable/edittext_bg"
+        android:textColor="@color/textPrimary"
+        android:textColorHint="@color/textSecondary"
+        android:layout_marginBottom="16dp" />
 
     <EditText
-        android:id="@+id/etName"
-        android:hint="Nombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:id="@+id/etEmail"
-        android:hint="Correo electrónico"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/etPass"
+        android:id="@+id/edtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Contraseña"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:drawableStart="@android:drawable/ic_lock_lock"
+        android:padding="12dp"
+        android:background="@drawable/edittext_bg"
+        android:textColor="@color/textPrimary"
+        android:textColorHint="@color/textSecondary"
+        android:layout_marginBottom="24dp" />
 
     <Button
-        android:id="@+id/btnSave"
-        android:text="Guardar"
+        android:id="@+id/btnRegistrar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Registrarme"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:layout_marginBottom="12dp" />
 
     <Button
-        android:id="@+id/btnCancel"
-        android:text="Cancelar"
+        android:id="@+id/btnVolverLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Volver a Login"
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="@color/white" />
+
 </LinearLayout>

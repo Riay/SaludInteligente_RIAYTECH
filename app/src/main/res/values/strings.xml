@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Salud Inteligente</string>
+    <string name="google_maps_key">AIzaSyAiINp3nElWb4fM6fzX5YCWcyde9Ml11hU</string>
+    <string name="default_notification_channel_id">Salud Inteligente</string>
 </resources>

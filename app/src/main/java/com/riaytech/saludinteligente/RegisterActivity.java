@@ -1,57 +1,54 @@
 package com.riaytech.saludinteligente;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText etName, etEmail, etPass;
-    Button btnSave, btnCancel;
-    DatabaseHelper db;
-    private static final String TAG = "RegisterActivity";
+
+    EditText edtUsuario, edtPassword;
+    Button btnRegistrar, btnVolverLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        etName = findViewById(R.id.etName);
-        etEmail = findViewById(R.id.etEmail);
-        etPass = findViewById(R.id.etPass);
-        btnSave = findViewById(R.id.btnSave);
-        btnCancel = findViewById(R.id.btnCancel);
-        db = new DatabaseHelper(this);
+        edtUsuario = findViewById(R.id.edtUsuario);
+        edtPassword = findViewById(R.id.edtPassword);
+        btnRegistrar = findViewById(R.id.btnRegistrar);
+        btnVolverLogin = findViewById(R.id.btnVolverLogin);
 
-        btnSave.setOnClickListener(v -> {
-            String name = etName.getText().toString().trim();
-            String email = etEmail.getText().toString().trim().toLowerCase();
-            String pass = etPass.getText().toString();
+        SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
 
-            if (name.isEmpty() || email.isEmpty() || pass.isEmpty()) {
+        btnRegistrar.setOnClickListener(v -> {
+            String usuario = edtUsuario.getText().toString();
+            String password = edtPassword.getText().toString();
+
+            if (usuario.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            boolean inserted = db.addUser(name, email, pass);
-            Log.d(TAG, "register: inserted=" + inserted + " email=" + email);
-            if (inserted) {
-                Toast.makeText(this, "Registro exitoso: " + email, Toast.LENGTH_SHORT).show();
-                // para que veas inmediatamente qué quedó guardado
-                String storedPass = db.getPasswordForEmail(email);
-                Log.d(TAG, "storedPass=" + storedPass);
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-                finish();
             } else {
-                Toast.makeText(this, "Error al registrar (email ya existe?)", Toast.LENGTH_SHORT).show();
+                prefs.edit()
+                        .putString("usuario", usuario)
+                        .putString("password", password)
+                        .apply();
+
+                Toast.makeText(this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
-        btnCancel.setOnClickListener(v -> {
-            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+        btnVolverLogin.setOnClickListener(v -> {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
             finish();
         });
     }
