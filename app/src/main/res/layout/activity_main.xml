@@ -24,7 +24,7 @@
         android:id="@+id/etCorreo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Correo electrónico"
+        android:hint="@string/correo_electr_nico"
         android:inputType="textEmailAddress"
         android:drawableStart="@android:drawable/ic_dialog_email"
         android:padding="12dp"
@@ -37,7 +37,7 @@
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Contraseña"
+        android:hint="@string/contrase_a"
         android:inputType="textPassword"
         android:drawableStart="@android:drawable/ic_lock_lock"
         android:padding="12dp"
@@ -50,7 +50,7 @@
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Iniciar sesión"
+        android:text="@string/iniciar_sesi_n"
         android:backgroundTint="@color/colorPrimary"
         android:textColor="@color/white"
         android:layout_marginBottom="12dp" />
@@ -59,7 +59,7 @@
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registrarse"
+        android:text="@string/registrarse"
         android:backgroundTint="@color/colorAccent"
         android:textColor="@color/white" />
 

@@ -2,4 +2,8 @@
     <string name="app_name">Salud Inteligente</string>
     <string name="google_maps_key">AIzaSyAiINp3nElWb4fM6fzX5YCWcyde9Ml11hU</string>
     <string name="default_notification_channel_id">Salud Inteligente</string>
+    <string name="correo_electr_nico">Correo electrónico</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="iniciar_sesi_n">Iniciar sesión</string>
+    <string name="registrarse">Registrarse</string>
 </resources>

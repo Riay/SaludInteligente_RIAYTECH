@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "987554262463",
+    "project_id": "saludinteligenteriaytech",
+    "storage_bucket": "saludinteligenteriaytech.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987554262463:android:4231ae96e9b180a3c9c50a",
+        "android_client_info": {
+          "package_name": "com.riaytech.saludinteligente"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3ZZdYnvQQe3BarEZu4LfwzywPIl3aA2g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
